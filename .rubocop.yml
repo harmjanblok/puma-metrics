@@ -1,0 +1,9 @@
+AllCops:
+  TargetRubyVersion: 2.2
+
+Naming/FileName:
+  Exclude:
+    - puma-metrics.gemspec
+
+Metrics/LineLength:
+  Max: 120

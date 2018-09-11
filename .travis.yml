@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+- 2.2
+- 2.3
+- 2.4
+- 2.5
+deploy:
+  provider: rubygems
+  api_key:
+    secure: WxQuGnHli0eOu/xYcO8fh8eK5sWxBQHwo5MaGhlZpdCvzELJ943gbfzhaZ7sK9okfLHPiY1uXYYA657KhlnDcrSLg16uI+HmPTi1RoKqQ3VmqQ6YoGhdl2GROlctCfHRO2iRuu7ujz9gf80OBH5ojHOwV+IrNsl911s6/4zhBY8uhFmdVb87zq1ZCPABNxanhlr0x51T6Q+JpdDW8c6FDGqUNtzqxEVMxS81tPhXnpDcUf/H0M8LOIQMyI21WyqUdo2vNqF6hCmRDogpZceJHtECboxgKoGJNEnOZdvAeX48Ysiu4O83Rq/mgBq30JBAgUe4TZPNwDjND+NJQktkzx/+IOJ+52G90VsJiUuBWsyh4IQKK+HqQr2CZyiEBybWU6FHCLifhuXfnOFA/VS2JNme16NiROrgrxoqtezbQ8yO8pgZ0PdtmL6hjBUknmZCyVDCdB1SPQGvo+b4AqkzY/SLuNCuJmOBBE5sMT6xFAiHU94rJViXMeJvF1pSQXIRFSuAQZ7ILOUC/GwqxIUmPk80p893itoFs3ExBPe2tBmzBVWyr+Dvu1SS2of+4JbBNbtOZr+nOT5pl7s4Zk4GG3b9UuozJn5yWi0Aj9iAju8T1r2tMpZ9zQtjrXtZJRi8ri8rQ2lC5ha63XLGGbDQon0bXs656GKKupaUS/BUboI=
+  gem: puma-metrics
+  on:
+    repo: harmjanblok/puma-metrics
+    rvm: 2.5
