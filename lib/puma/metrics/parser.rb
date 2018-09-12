@@ -3,42 +3,20 @@ require 'prometheus/client'
 module Puma
   module Metrics
     class Parser
-      PUMA_METRICS = %i[
-        backlog
-        booted_workers
-        max_threads
-        old_workers
-        pool_capacity
-        running
-        workers
-      ].freeze
-
       def initialize(clustered = false)
         register_default_metrics
         register_clustered_metrics if clustered
       end
 
-      def parse(metrics)
-        metrics = metrics.each_with_object({}) { |(k, v), memo| memo[k.to_sym] = v; } # symbolize
-        labels = metrics.key?(:index) ? { index: metrics[:index] } : {} # include :index if present
-        metrics.collect do |key, value|
-          send(key, labels, value) # metric_name, labels, value
+      def parse(stats, labels = {})
+        stats.each do |key, value|
+          value.each { |s| parse(s, labels.merge(index: s['index'])) } if key == 'worker_status'
+          parse(value, labels) if key == 'last_status'
+          update_metric(key, value, labels)
         end
       end
 
       private
-
-      def last_status(labels, hash)
-        parse(hash.merge(labels))
-      end
-
-      def method_missing(method, *args)
-        return nil unless PUMA_METRICS.include?(method)
-
-        registry
-          .get("puma_#{method}") # Prometheus::Client::Registry#get(name)
-          .set(*args) # Prometheus::Client::Gauge#set(labels={}, value)
-      end
 
       def register_clustered_metrics
         registry.gauge(:puma_booted_workers, 'Number of booted workers').set({}, 1)
@@ -57,10 +35,10 @@ module Puma
         Prometheus::Client.registry
       end
 
-      def worker_status(_labels, workers)
-        workers.each do |worker|
-          parse(worker)
-        end
+      def update_metric(key, value, labels)
+        return if registry.get("puma_#{key}").nil?
+
+        registry.get("puma_#{key}").set(labels, value)
       end
     end
   end
