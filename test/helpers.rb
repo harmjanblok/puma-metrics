@@ -55,7 +55,7 @@ module Helpers
     end
   end
 
-  def cluster_booted
+  def cluster_booted?
     worker_status = JSON.parse(Puma.stats)['worker_status']
 
     (worker_status.length == @configuration.options[:workers]) &&
@@ -64,11 +64,11 @@ module Helpers
 
   def wait_booted
     @wait.sysread 1
-    # Wait for workers to report 'last_status'
     return unless @configuration.options[:workers] > 0
 
+    # Wait for workers to report 'last_status'
     Timeout.timeout(15) do
-      sleep 0.2 until cluster_booted
+      sleep 0.2 until cluster_booted?
     end
   end
 end
