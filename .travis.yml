@@ -4,6 +4,10 @@ rvm:
 - 2.3
 - 2.4
 - 2.5
+script:
+- bundle exec rake
+- bundle exec overcommit --sign
+- bundle exec overcommit --run
 deploy:
   provider: rubygems
   api_key:
