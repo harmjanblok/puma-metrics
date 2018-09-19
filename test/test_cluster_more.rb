@@ -16,7 +16,6 @@ class TestClusterMore < Minitest::Test
   def configuration
     Puma::Configuration.new do |config|
       config.bind 'tcp://127.0.0.1:0'
-      config.metrics_url 'tcp://127.0.0.1:9395'
       config.plugin 'metrics'
       config.quiet
       config.workers 2

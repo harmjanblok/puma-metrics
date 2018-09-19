@@ -15,7 +15,7 @@ module Helpers
   end
 
   def uri
-    URI.parse @configuration.options[:metrics_url]
+    URI.parse(@configuration.options[:metrics_url] || 'tcp://127.0.0.1:9393')
   end
 
   def start_server(configuration)
