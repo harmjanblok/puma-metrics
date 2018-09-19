@@ -23,6 +23,13 @@ Puma::Plugin.create do
       launcher.events.error "Invalid control URI: #{str}"
     end
 
+    launcher.events.register(:state) do |state|
+      if %i[halt restart stop].include?(state)
+        metrics.stop
+        metrics.binder.close
+      end
+    end
+
     metrics.run
   end
   # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
