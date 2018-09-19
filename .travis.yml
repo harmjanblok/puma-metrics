@@ -8,6 +8,9 @@ script:
 - bundle exec rake
 - bundle exec overcommit --sign
 - bundle exec overcommit --run
+branches:
+  only:
+  - master
 deploy:
   provider: rubygems
   api_key:
