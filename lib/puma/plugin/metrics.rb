@@ -3,8 +3,7 @@ require 'puma/metrics/dsl'
 Puma::Plugin.create do
   # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def start(launcher)
-    str = launcher.options[:metrics_url]
-    return unless str
+    str = launcher.options[:metrics_url] || 'tcp://0.0.0.0:9393'
 
     require 'puma/metrics/app'
 

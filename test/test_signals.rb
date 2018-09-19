@@ -17,7 +17,6 @@ class TestSignals < Minitest::Test
   def configuration
     Puma::Configuration.new do |config|
       config.bind 'tcp://127.0.0.1:0'
-      config.metrics_url 'tcp://127.0.0.1:9392'
       config.plugin 'metrics'
       config.quiet
       config.app { [200, {}, ['hello world']] }
