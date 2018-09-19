@@ -5,6 +5,14 @@ require 'puma/configuration'
 class TestClusterMore < Minitest::Test
   include Helpers
 
+  def setup
+    start_server(configuration)
+  end
+
+  def teardown
+    stop_server
+  end
+
   def configuration
     Puma::Configuration.new do |config|
       config.bind 'tcp://127.0.0.1:0'
@@ -29,5 +37,9 @@ class TestClusterMore < Minitest::Test
       { name: 'puma_running',        type: 'gauge', labels: l,  value: 0.0 },
       { name: 'puma_workers',        type: 'gauge', labels: [], value: 2.0 }
     ]
+  end
+
+  def test_metrics
+    assert_response_includes_metrics(metrics)
   end
 end
