@@ -9,14 +9,13 @@ require 'timeout'
 
 module Helpers
   def response
-    uri = URI.parse @configuration.options[:metrics_url]
     @response ||= Net::HTTP.start uri.host, uri.port do |http|
       http.request Net::HTTP::Get.new('/metrics')
     end.body
   end
 
-  def setup
-    start_server(configuration)
+  def uri
+    URI.parse @configuration.options[:metrics_url]
   end
 
   def start_server(configuration)
@@ -42,11 +41,7 @@ module Helpers
     @ready.close
   end
 
-  def teardown
-    stop_server
-  end
-
-  def test_metrics
+  def assert_response_includes_metrics(metrics)
     metrics.each do |metric|
       assert_includes response, "# TYPE #{metric[:name]} #{metric[:type]}\n"
       metric[:labels].each do |label|
