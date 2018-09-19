@@ -27,7 +27,7 @@ module Helpers
     @configuration = configuration
     @launcher = Puma::Launcher.new(@configuration, events: @events)
 
-    Thread.new do
+    @launcher_thread = Thread.new do
       Thread.current.abort_on_exception = true
       @launcher.run
     end
@@ -39,6 +39,7 @@ module Helpers
     @launcher.stop
     @wait.close
     @ready.close
+    @launcher_thread.join
   end
 
   def assert_response_includes_metrics(metrics)
