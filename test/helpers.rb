@@ -37,6 +37,7 @@ module Helpers
   def stop_server
     Prometheus::Client.instance_eval { @registry = nil }
     @launcher.stop
+    @launcher.binder.close
     @wait.close
     @ready.close
     @launcher_thread.join
