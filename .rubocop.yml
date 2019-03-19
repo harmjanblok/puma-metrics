@@ -5,14 +5,19 @@ Naming/FileName:
   Exclude:
     - puma-metrics.gemspec
 
+Metrics/BlockLength:
+  Max: 45
+
 Metrics/LineLength:
   Max: 120
 
 Style/Documentation:
   Enabled: false
+
 Style/MethodMissingSuper:
   Exclude:
     - lib/puma/metrics/parser.rb
+
 Style/MissingRespondToMissing:
   Exclude:
     - lib/puma/metrics/parser.rb

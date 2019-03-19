@@ -36,6 +36,12 @@ plugin 'metrics'
 #
 # The default is "tcp://0.0.0.0:9393".
 # metrics_url 'tcp://0.0.0.0:9393'
+
+# Instead of creating a metric server, internally poll, using the configured
+# interval in seconds, for the Puma metrics and assume that the Rails app
+# itself provides a `/metrics` endpoint for exporting.
+# metrics_poll 15
+# metrics_url 'false'
 ```
 
 ## Credits

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+Features:
+- Implement support for polling for metrics via `metrics_poll`
+- Support disabling of metrics listener via `metrics_url off`
+
 ## 1.0.1
 
 Bugfixes:

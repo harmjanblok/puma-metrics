@@ -5,6 +5,21 @@ require 'puma/configuration'
 class TestConfig < Minitest::Test
   include Helpers
 
+  def test_metrics_poll
+    configuration = Puma::Configuration.new do |config|
+      config.bind 'tcp://127.0.0.1:0'
+      config.plugin 'metrics'
+      config.metrics_poll 1
+      config.metrics_url 'false'
+      config.quiet
+      config.app { [200, {}, ['hello world']] }
+    end
+
+    start_server(configuration)
+    assert_raises(Errno::ECONNREFUSED) { response }
+    stop_server
+  end
+
   def test_default_metrics_url
     configuration = Puma::Configuration.new do |config|
       config.bind 'tcp://127.0.0.1:0'
@@ -15,6 +30,20 @@ class TestConfig < Minitest::Test
 
     start_server(configuration)
     assert_includes response, '# TYPE puma_backlog gauge'
+    stop_server
+  end
+
+  def test_metrics_url_disabled
+    configuration = Puma::Configuration.new do |config|
+      config.bind 'tcp://127.0.0.1:0'
+      config.plugin 'metrics'
+      config.metrics_url 'false'
+      config.quiet
+      config.app { [200, {}, ['hello world']] }
+    end
+
+    start_server(configuration)
+    assert_raises(Errno::ECONNREFUSED) { response }
     stop_server
   end
 

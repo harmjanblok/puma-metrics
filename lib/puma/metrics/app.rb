@@ -12,12 +12,16 @@ module Puma
       end
 
       def call(_env)
-        @parser.parse JSON.parse(@launcher.stats)
+        parse
         [
           200,
           { 'Content-Type' => 'text/plain' },
           [Prometheus::Client::Formats::Text.marshal(Prometheus::Client.registry)]
         ]
+      end
+
+      def parse
+        @parser.parse JSON.parse(@launcher.stats)
       end
     end
   end
