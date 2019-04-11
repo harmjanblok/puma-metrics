@@ -24,8 +24,7 @@ Puma::Plugin.create do
 
     launcher.events.register(:state) do |state|
       if %i[halt restart stop].include?(state)
-        metrics.stop
-        metrics.binder.close
+        metrics.stop(true) unless metrics.shutting_down?
       end
     end
 
