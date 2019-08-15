@@ -6,9 +6,8 @@ module Puma
   module Metrics
     class App
       def initialize(launcher)
-        @launcher = launcher
-        clustered = (@launcher.options[:workers] || 0) > 0
-        @parser = Parser.new clustered
+        clustered = (launcher.options[:workers] || 0) > 0
+        @parser = Parser.new(clustered)
       end
 
       def call(_env)
@@ -21,7 +20,7 @@ module Puma
       end
 
       def parse
-        @parser.parse JSON.parse(@launcher.stats)
+        @parser.parse(JSON.parse(Puma.stats)
       end
     end
   end
