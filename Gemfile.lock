@@ -3,7 +3,7 @@ PATH
   specs:
     puma-metrics (1.0.2)
       prometheus-client (~> 0.8)
-      puma (~> 3.0)
+      puma (>= 3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,6 +15,7 @@ GEM
     iniparse (1.4.4)
     jaro_winkler (1.5.2)
     minitest (5.11.3)
+    nio4r (2.5.1)
     overcommit (0.47.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
@@ -24,7 +25,8 @@ GEM
     prometheus-client (0.9.0)
       quantile (~> 0.2.1)
     psych (3.1.0)
-    puma (3.12.1)
+    puma (4.1.1)
+      nio4r (~> 2.0)
     quantile (0.2.1)
     rainbow (3.0.0)
     rake (12.3.2)
