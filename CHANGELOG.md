@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+Features:
+- can be used with puma 3 or puma 4
+
 ## 1.0.2
 
 Bugfixes:
