@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    puma-metrics (1.0.2)
+    puma-metrics (1.0.3)
       prometheus-client (~> 0.8)
       puma (>= 3.0)
 
@@ -53,4 +53,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
