@@ -6,12 +6,19 @@ on:
 jobs:
   deploy:
     name: to rubygems
+    needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
+    - uses: actions/setup-ruby@master
+      with:
+        ruby-version: 2.6
     - env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-        RELEASE_COMMAND: rake release
-      name: Release Gem
-      uses: cadwallion/publish-rubygems-action@master
+        RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+      run: |
+        mkdir -p $HOME/.gem
+        touch $HOME/.gem/credentials
+        chmod 0600 $HOME/.gem/credentials
+        printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
+        gem build *.gemspec
+        gem push *.gem
