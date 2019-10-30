@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'puma/metrics/dsl'
 
 Puma::Plugin.create do

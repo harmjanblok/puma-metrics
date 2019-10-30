@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.6
 
 Naming/FileName:
   Exclude:
@@ -9,6 +9,8 @@ Metrics/LineLength:
   Max: 120
 
 Style/Documentation:
+  Enabled: false
+Style/NumericPredicate:
   Enabled: false
 Style/MethodMissingSuper:
   Exclude:
