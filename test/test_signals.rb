@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'helpers'
 require 'minitest/autorun'
 require 'puma/configuration'

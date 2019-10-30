@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'prometheus/client/formats/text'
 require 'puma/metrics/parser'

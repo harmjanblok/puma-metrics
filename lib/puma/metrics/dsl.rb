@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Puma
   class DSL
     def metrics_url(url)
