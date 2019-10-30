@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
 
-  spec.add_runtime_dependency 'prometheus-client', '~> 0.8'
+  spec.add_runtime_dependency 'prometheus-client', '~> 0.10'
   spec.add_runtime_dependency 'puma', '>= 3.0'
 
   spec.add_development_dependency 'bundler'
