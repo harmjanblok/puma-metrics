@@ -6,10 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: actions/setup-ruby@v1
+    - uses: actions/setup-ruby@master
       with:
         ruby-version: ${{ matrix.ruby }}
-        architecture: 'x64'
     - run: gem install bundler
     - run: bundle install
     - run: bundle exec rake
