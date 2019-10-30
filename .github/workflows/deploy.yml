@@ -1,0 +1,17 @@
+name: deploy
+on:
+  push:
+    branches:
+    - master
+jobs:
+  deploy:
+    name: to rubygems
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+        RELEASE_COMMAND: rake release
+      name: Release Gem
+      uses: cadwallion/publish-rubygems-action@master
