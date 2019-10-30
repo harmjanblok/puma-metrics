@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0
+
+Changes:
+- Upgrade prometheus-client to '~> 0.10'
+
+Housekeeping:
+- Set target version to 2.6
+- Added editorconfig
+
 ## 1.0.3
 
 Features:
