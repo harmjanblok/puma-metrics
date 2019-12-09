@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     puma-metrics (1.1.0)
-      prometheus-client (~> 0.10)
+      prometheus-client (>= 0.10)
       puma (>= 3.0)
 
 GEM
@@ -20,7 +20,7 @@ GEM
     parallel (1.19.1)
     parser (2.7.0.4)
       ast (~> 2.4.0)
-    prometheus-client (0.10.0)
+    prometheus-client (1.0.0)
     puma (4.3.5)
       nio4r (~> 2.0)
     rainbow (3.0.0)

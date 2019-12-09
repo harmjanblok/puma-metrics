@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+Changes:
+- Relax prometheus-client to '>= 0.10'
+
 Housekeeping:
 - Update development dependencies
 
