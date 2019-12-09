@@ -1,5 +1,10 @@
 # Changelog
 
+## Pending
+
+Changes:
+- Relax prometheus-client to '>= 0.10'
+
 ## 1.1.0
 
 Changes:
