@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+Housekeeping:
+- Update development dependencies
+
 ## 1.1.0
 
 Changes:
