@@ -14,12 +14,21 @@ module Puma
       end
 
       def call(_env)
-        @parser.parse JSON.parse(@launcher.stats)
+        retrieve_and_parse_stats!
         [
           200,
           { 'Content-Type' => 'text/plain' },
           [Prometheus::Client::Formats::Text.marshal(Prometheus::Client.registry)]
         ]
+      end
+
+      def retrieve_and_parse_stats!
+        puma_stats = @launcher.stats
+        if puma_stats.is_a?(Hash) # Modern Puma outputs stats as a Symbol-keyed Hash
+          @parser.parse(puma_stats)
+        else
+          @parser.parse(JSON.parse(puma_stats, symbolize_names: true))
+        end
       end
     end
   end
