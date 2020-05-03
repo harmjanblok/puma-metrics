@@ -10,10 +10,10 @@ module Puma
         register_clustered_metrics if clustered
       end
 
-      def parse(stats, labels = {})
-        stats.each do |key, value|
-          value.each { |s| parse(s, labels.merge(index: s['index'])) } if key == 'worker_status'
-          parse(value, labels) if key == 'last_status'
+      def parse(symbol_keyed_stats, labels = {})
+        symbol_keyed_stats.each do |key, value|
+          value.each { |s| parse(s, labels.merge(index: s[:index])) } if key == :worker_status
+          parse(value, labels) if key == :last_status
           update_metric(key, value, labels)
         end
       end
