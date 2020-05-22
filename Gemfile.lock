@@ -21,7 +21,7 @@ GEM
     parser (2.7.0.4)
       ast (~> 2.4.0)
     prometheus-client (0.10.0)
-    puma (4.3.3)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rainbow (3.0.0)
     rake (13.0.1)
