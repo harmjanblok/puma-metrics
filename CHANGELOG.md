@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.0
+
 Changes:
 - Drop support for ruby 2.4
 - Relax prometheus-client to '>= 0.10'
