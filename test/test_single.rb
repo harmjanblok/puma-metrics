@@ -23,6 +23,7 @@ class TestSingle < Minitest::Test
       config.app do |_env|
         [200, {}, ['hello world']]
       end
+      config.threads(0, 16) # default for non MRI
     end
   end
 
