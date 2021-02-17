@@ -5,7 +5,7 @@ require 'prometheus/client'
 module Puma
   module Metrics
     class Parser
-      def initialize(clustered = false)
+      def initialize(clustered: false)
         register_default_metrics
         register_clustered_metrics if clustered
       end
