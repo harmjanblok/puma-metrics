@@ -28,17 +28,19 @@ class TestClusterMore < Minitest::Test
     end
   end
 
+  def l
+    @l ||= ['{index="0"}', '{index="1"}']
+  end
+
   def metrics
-    l = ['{index="0"}', '{index="1"}']
-    [
-      { name: 'puma_backlog',        type: 'gauge', labels: l,  value: 0.0 },
-      { name: 'puma_booted_workers', type: 'gauge', labels: [], value: 2.0 },
-      { name: 'puma_max_threads',    type: 'gauge', labels: l,  value: 16.0 },
-      { name: 'puma_old_workers',    type: 'gauge', labels: [], value: 0.0 },
-      { name: 'puma_pool_capacity',  type: 'gauge', labels: l,  value: 16.0 },
-      { name: 'puma_running',        type: 'gauge', labels: l,  value: 0.0 },
-      { name: 'puma_workers',        type: 'gauge', labels: [], value: 2.0 }
-    ]
+    [{ name: 'puma_backlog',        type: 'gauge', labels: l,  value: 0.0 },
+     { name: 'puma_booted_workers', type: 'gauge', labels: [], value: 2.0 },
+     { name: 'puma_max_threads',    type: 'gauge', labels: l,  value: 16.0 },
+     { name: 'puma_old_workers',    type: 'gauge', labels: [], value: 0.0 },
+     { name: 'puma_pool_capacity',  type: 'gauge', labels: l,  value: 16.0 },
+     { name: 'puma_requests_count', type: 'gauge', labels: l,  value: 0.0 },
+     { name: 'puma_running',        type: 'gauge', labels: l,  value: 0.0 },
+     { name: 'puma_workers',        type: 'gauge', labels: [], value: 2.0 }]
   end
 
   def test_metrics
