@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.2.2
+
+Changes:
+- Expose new metric `puma_requests_count` when using Puma 5
+
 ## 1.2.1
 
 Changes:
