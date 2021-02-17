@@ -26,7 +26,9 @@ Puma::Plugin.create do
 
     launcher.events.register(:state) do |state|
       if %i[halt restart stop].include?(state)
+        # rubocop:disable Style/SoleNestedConditional
         metrics.stop(true) unless metrics.shutting_down?
+        # rubocop:enable Style/SoleNestedConditional
       end
     end
 

@@ -10,7 +10,7 @@ module Puma
       def initialize(launcher)
         @launcher = launcher
         clustered = (@launcher.options[:workers] || 0) > 0
-        @parser = Parser.new clustered
+        @parser = Parser.new(clustered: clustered)
       end
 
       def call(_env)
