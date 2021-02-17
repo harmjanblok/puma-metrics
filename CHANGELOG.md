@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.2.1
+
+Changes:
+- Drop support for ruby 2.5
+
+Housekeeping:
+- Update dependencies
+- Updates for Puma 5
+
 ## 1.2.0
 
 Changes:
