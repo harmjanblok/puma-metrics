@@ -46,7 +46,7 @@ module Puma
                        docstring: 'Maximum number of worker threads',
                        labels: [:index],
                        preset_labels: { index: 0 })
-        registry.guage(:puma_requests_count,
+        registry.gauge(:puma_requests_count,
                        docstring: 'Cumulative number of processed requests since start',
                        labels: [:index],
                        preset_labels: { index: 0 })
