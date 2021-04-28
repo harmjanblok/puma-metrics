@@ -56,7 +56,7 @@ module Puma
       end
 
       def registry
-        Prometheus::Client.registry
+        Puma::Metrics::Config.registry
       end
 
       def update_metric(key, value, labels)

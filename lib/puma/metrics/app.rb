@@ -2,6 +2,7 @@
 
 require 'json'
 require 'prometheus/client/formats/text'
+require 'puma/metrics/config'
 require 'puma/metrics/parser'
 
 module Puma
@@ -18,7 +19,7 @@ module Puma
         [
           200,
           { 'Content-Type' => 'text/plain' },
-          [Prometheus::Client::Formats::Text.marshal(Prometheus::Client.registry)]
+          [Prometheus::Client::Formats::Text.marshal(Puma::Metrics::Config.registry)]
         ]
       end
 

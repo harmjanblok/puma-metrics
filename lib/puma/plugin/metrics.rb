@@ -9,6 +9,7 @@ Puma::Plugin.create do
 
     require 'puma/metrics/app'
 
+    Puma::Metrics::Config.registry = Prometheus::Client.registry
     app = Puma::Metrics::App.new launcher
     uri = URI.parse str
 

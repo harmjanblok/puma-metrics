@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changes:
+- Added a config class
+- Moved the prometheus registry to the config class so it can be overridden by alternative plugins.
+
 ## 1.2.2
 
 Changes:
