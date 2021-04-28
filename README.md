@@ -38,6 +38,14 @@ plugin 'metrics'
 # metrics_url 'tcp://0.0.0.0:9393'
 ```
 
+## Testing
+
+Run
+
+```ruby
+bundle exec rake test
+```
+
 ## Credits
 
 The gem is inspired by the following projects:
