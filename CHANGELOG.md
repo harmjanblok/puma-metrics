@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.2.3
+
+Housekeeping:
+- Update dependencies
+
 ## 1.2.2
 
 Changes:
