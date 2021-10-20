@@ -24,12 +24,8 @@ Puma::Plugin.create do
       launcher.events.error "Invalid control URI: #{str}"
     end
 
-    launcher.events.register(:state) do |state|
-      if %i[halt restart stop].include?(state)
-        # rubocop:disable Style/SoleNestedConditional
-        metrics.stop(true) unless metrics.shutting_down?
-        # rubocop:enable Style/SoleNestedConditional
-      end
+    launcher.events.on_stopped do
+      metrics.stop(true) unless metrics.shutting_down?
     end
 
     metrics.run
