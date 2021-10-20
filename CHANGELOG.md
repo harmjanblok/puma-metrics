@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+Changes:
+- Shut down metrics server in on_stopped so it only stops when main puma process stops and ignores when workers are stopped. This allows us to maintain a running metrics server when workers restart or crash.
+
 ## 1.2.3
 
 Housekeeping:
