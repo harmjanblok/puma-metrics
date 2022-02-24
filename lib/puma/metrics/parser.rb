@@ -7,6 +7,7 @@ module Puma
     class Parser
       def initialize(clustered: false)
         register_default_metrics
+        register_system_metrics
         register_clustered_metrics if clustered
       end
 
@@ -19,6 +20,13 @@ module Puma
       end
 
       private
+
+      def register_system_metrics
+        registry.gauge(:cpu_usage, docstring: 'cpu usage percent')
+                .set({}, `ps x -o %cpu #{Process.pid} | tail -1`.strip.to_f)
+        registry.gauge(:memory_usage, docstring: 'memory usage bytes')
+                .set({}, `ps x -o rss #{Process.pid} | tail -1`.strip.to_i)
+      end
 
       def register_clustered_metrics
         registry.gauge(:puma_booted_workers,
