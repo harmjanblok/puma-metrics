@@ -37,7 +37,9 @@ class TestSingle < Minitest::Test
      { name: 'puma_pool_capacity',  type: 'gauge', labels: l,  value: 16.0 },
      { name: 'puma_requests_count', type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_running',        type: 'gauge', labels: l,  value: 0.0 },
-     { name: 'puma_workers',        type: 'gauge', labels: [], value: 1.0 }]
+     { name: 'puma_workers',        type: 'gauge', labels: [], value: 1.0 },
+     { name: 'cpu_usage',           type: 'gauge', labels: [], value: `ps x -o %cpu #{Process.pid} | tail -1`.strip.to_f },
+     { name: 'memory_usage',        type: 'gauge', labels: [], value: `ps x -o rss #{Process.pid} | tail -1`.strip.to_i }]
   end
 
   def test_metrics
