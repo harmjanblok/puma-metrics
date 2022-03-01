@@ -2,8 +2,15 @@
 
 ## Unreleased
 
+## 1.2.4
+
 Changes:
-- Shut down metrics server in on_stopped so it only stops when main puma process stops and ignores when workers are stopped. This allows us to maintain a running metrics server when workers restart or crash.
+- Shut down metrics server in `on_stopped` so it only stops when main puma process stops and ignores when workers are
+  stopped. This allows us to maintain a running metrics server when workers restart or crash.
+
+Housekeeping:
+- Update dependencies
+- Test on ruby 3.1
 
 ## 1.2.3
 
