@@ -2,6 +2,9 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.6
 
+Gemspec/RequireMFA:
+  Enabled: false
+
 Naming/FileName:
   Exclude:
     - puma-metrics.gemspec

@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
 
-  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.metadata['rubygems_mfa_required'] = 'false'
 
   spec.required_ruby_version = '>= 2.6'
 
