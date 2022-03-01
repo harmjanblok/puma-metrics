@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    puma-metrics (1.2.2)
+    puma-metrics (1.2.3)
       prometheus-client (>= 0.10)
       puma (>= 3.0)
 
@@ -9,36 +9,37 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    childprocess (4.0.0)
+    childprocess (4.1.0)
     iniparse (1.5.0)
-    minitest (5.14.4)
+    minitest (5.15.0)
     nio4r (2.5.8)
-    overcommit (0.57.0)
+    overcommit (0.58.0)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
-    parallel (1.20.1)
-    parser (3.0.1.1)
+      rexml (~> 3.2)
+    parallel (1.21.0)
+    parser (3.1.1.0)
       ast (~> 2.4.1)
-    prometheus-client (2.1.0)
+    prometheus-client (3.0.0)
     puma (5.6.2)
       nio4r (~> 2.0)
-    rainbow (3.0.0)
-    rake (13.0.3)
-    regexp_parser (2.1.1)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    regexp_parser (2.2.1)
     rexml (3.2.5)
-    rubocop (1.15.0)
+    rubocop (1.25.1)
       parallel (~> 1.10)
-      parser (>= 3.0.0.0)
+      parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.5.0, < 2.0)
+      rubocop-ast (>= 1.15.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.5.0)
-      parser (>= 3.0.1.1)
+    rubocop-ast (1.16.0)
+      parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
-    unicode-display_width (2.0.0)
+    unicode-display_width (2.1.0)
 
 PLATFORMS
   ruby
