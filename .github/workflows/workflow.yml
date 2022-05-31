@@ -25,7 +25,7 @@ jobs:
       matrix:
         ruby: ['2.6', '2.7', '3.0', '3.1']
   deploy:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     name: to rubygems
     needs: test
     runs-on: ubuntu-latest
