@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 1.2.5
+
+Changes:
+- Require puma 5.0 or newer as older versions don't support the `on_stopped` introduced in version puma-metrics 1.2.4.
+
+Housekeeping:
+- Update dependencies
+
 ## 1.2.4
 
 Changes:
