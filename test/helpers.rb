@@ -23,7 +23,7 @@ module Helpers
   def start_server(configuration)
     @wait, @ready = IO.pipe
 
-    @events = Puma::Events.strings
+    @events = Puma::Events.new
     @events.on_booted { @ready << '!' }
 
     @configuration = configuration
