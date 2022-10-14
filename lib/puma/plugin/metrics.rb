@@ -16,7 +16,7 @@ Puma::Plugin.create do
 
     case uri.scheme
     when 'tcp'
-      launcher.events.log "* Starting metrics server on #{str}"
+      launcher.log_writer.log "* Starting metrics server on #{str}"
       metrics.add_tcp_listener uri.host, uri.port
     else
       launcher.events.error "Invalid control URI: #{str}"
