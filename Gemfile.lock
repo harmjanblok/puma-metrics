@@ -3,7 +3,7 @@ PATH
   specs:
     puma-metrics (1.2.5)
       prometheus-client (>= 0.10)
-      puma (>= 5.0)
+      puma (>= 6.0)
 
 GEM
   remote: https://rubygems.org/
