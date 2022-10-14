@@ -12,9 +12,7 @@ Puma::Plugin.create do
     app = Puma::Metrics::App.new launcher
     uri = URI.parse str
 
-    metrics = Puma::Server.new app, launcher.events
-    metrics.min_threads = 0
-    metrics.max_threads = 1
+    metrics = Puma::Server.new app, launcher.events, min_threads: 0, max_threads: 1
 
     case uri.scheme
     when 'tcp'
