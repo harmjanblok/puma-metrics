@@ -23,7 +23,7 @@ jobs:
       run: bundle exec overcommit --run
     strategy:
       matrix:
-        ruby: ['2.6', '2.7', '3.0', '3.1']
+        ruby: ['2.7', '3.0', '3.1']
   deploy:
     if: github.ref == 'refs/heads/main'
     name: to rubygems

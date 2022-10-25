@@ -5,6 +5,9 @@
 Changes:
 - Require puma 6.0 or newer
 
+Housekeeping:
+- Drop support for ruby 2.6
+
 ## 1.2.5
 
 Changes:
