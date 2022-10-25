@@ -2,8 +2,10 @@
 
 ## Unreleased
 
+## 1.3.0
+
 Changes:
-- Require puma 6.0 or newer
+- Added support for puma 6.0 or newer (#43)
 
 Housekeeping:
 - Drop support for ruby 2.6
