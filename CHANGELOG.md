@@ -7,6 +7,7 @@ Changes:
 
 Housekeeping:
 - Drop support for ruby 2.6
+- Update dependencies
 
 ## 1.2.5
 
