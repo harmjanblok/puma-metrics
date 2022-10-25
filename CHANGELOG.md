@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+Changes:
+- Require puma 6.0 or newer
+
 ## 1.2.5
 
 Changes:

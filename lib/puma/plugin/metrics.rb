@@ -12,13 +12,11 @@ Puma::Plugin.create do
     app = Puma::Metrics::App.new launcher
     uri = URI.parse str
 
-    metrics = Puma::Server.new app, launcher.events
-    metrics.min_threads = 0
-    metrics.max_threads = 1
+    metrics = Puma::Server.new app, launcher.events, min_threads: 0, max_threads: 1
 
     case uri.scheme
     when 'tcp'
-      launcher.events.log "* Starting metrics server on #{str}"
+      launcher.log_writer.log "* Starting metrics server on #{str}"
       metrics.add_tcp_listener uri.host, uri.port
     else
       launcher.events.error "Invalid control URI: #{str}"
