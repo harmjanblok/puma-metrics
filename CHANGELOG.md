@@ -3,6 +3,7 @@
 ## Unreleased
 
 Housekeeping:
+- Drop support for ruby 2.7
 - Update dependencies
 
 ## 1.3.0
