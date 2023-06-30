@@ -47,7 +47,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (>= 2.0.0)
   minitest
   overcommit
   puma-metrics!
