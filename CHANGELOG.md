@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+Housekeeping:
+- Update dependencies
+
 ## 1.3.0
 
 Changes:
