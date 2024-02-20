@@ -4,6 +4,7 @@
 
 Housekeeping:
 - Drop support for ruby 2.7
+- Add support for ruby 3.3
 - Update dependencies
 
 ## 1.3.0
