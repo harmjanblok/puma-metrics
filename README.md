@@ -1,6 +1,6 @@
 # puma-metrics
 
-[![Build Status](https://travis-ci.org/harmjanblok/puma-metrics.svg?branch=master)](https://travis-ci.org/harmjanblok/puma-metrics)
+[![Release](https://github.com/harmjanblok/puma-metrics/actions/workflows/workflow.yml/badge.svg)](https://github.com/harmjanblok/puma-metrics/actions/workflows/workflow.yml)
 
 A puma plugin to export Puma's internal statistics as Prometheus metrics.
 
