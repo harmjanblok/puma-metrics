@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.0
+
 Housekeeping:
 - Drop support for ruby 2.7
 - Add support for ruby 3.3
