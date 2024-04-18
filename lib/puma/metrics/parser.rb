@@ -47,7 +47,7 @@ module Puma
                        labels: [:index],
                        preset_labels: { index: 0 })
         registry.gauge(:puma_requests_count,
-                       docstring: 'Number of processed requests',
+                       docstring: 'Cumulative number of processed requests since start',
                        labels: [:index],
                        preset_labels: { index: 0 })
         registry.gauge(:puma_workers,
