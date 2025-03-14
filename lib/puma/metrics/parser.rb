@@ -34,6 +34,10 @@ module Puma
                        docstring: 'Number of established but unaccepted connections in the backlog',
                        labels: [:index],
                        preset_labels: { index: 0 })
+        registry.gauge(:puma_busy_threads,
+                       docstring: 'How saturated the worker threads are with requests',
+                       labels: [:index],
+                       preset_labels: { index: 0 })
         registry.gauge(:puma_running,
                        docstring: 'Number of running worker threads',
                        labels: [:index],

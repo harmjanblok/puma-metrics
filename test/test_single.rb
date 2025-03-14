@@ -33,6 +33,7 @@ class TestSingle < Minitest::Test
 
   def metrics
     [{ name: 'puma_backlog',        type: 'gauge', labels: l,  value: 0.0 },
+     { name: 'puma_busy_threads',   type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_max_threads',    type: 'gauge', labels: l,  value: 16.0 },
      { name: 'puma_pool_capacity',  type: 'gauge', labels: l,  value: 16.0 },
      { name: 'puma_requests_count', type: 'gauge', labels: l,  value: 0.0 },
