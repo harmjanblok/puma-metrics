@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 3.0'
 
-  spec.add_runtime_dependency 'prometheus-client', '>= 0.10'
-  spec.add_runtime_dependency 'puma', '>= 6.0'
+  spec.add_dependency 'prometheus-client', '>= 0.10'
+  spec.add_dependency 'puma', '~> 6'
 end
