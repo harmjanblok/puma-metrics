@@ -57,7 +57,7 @@ module Helpers
     worker_status = JSON.parse(Puma.stats)['worker_status']
 
     (worker_status.length == @configuration.options[:workers]) &&
-      (worker_status.all? { |w| w.key?('last_status') && w['last_status'].key?('backlog') })
+      worker_status.all? { |w| w.key?('last_status') && w['last_status'].key?('backlog') }
   end
 
   def wait_booted
