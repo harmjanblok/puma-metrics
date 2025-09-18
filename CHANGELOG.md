@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.4.2
+
+Housekeeping:
+
+- Relax constraint limit to puma 6, exclude 7.0.0
+
 ## 1.4.1
 
 Housekeeping:
