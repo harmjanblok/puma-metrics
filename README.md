@@ -38,6 +38,24 @@ plugin 'metrics'
 # metrics_url 'tcp://0.0.0.0:9393'
 ```
 
+### Middleware
+
+This allows for an alternative method to collect metrics. The middleware fetches stats from the Puma control app and parses them into Prometheus metrics. This is useful when your application already provides a metrics endpoint.
+
+Add the following to your puma `config.rb`:
+
+```ruby
+# config/puma.rb
+activate_control_app 'tcp://127.0.0.1:9293', { no_token: true }
+```
+
+Use the middleware in your application (Rails example given):
+
+```ruby
+# config/application.rb
+config.middleware.use Puma::Metrics::Middleware
+```
+
 ## Credits
 
 The gem is inspired by the following projects:

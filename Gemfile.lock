@@ -33,6 +33,7 @@ GEM
     puma (7.0.3)
       nio4r (~> 2.0)
     racc (1.8.1)
+    rack (3.2.1)
     rainbow (3.1.1)
     rake (13.3.0)
     regexp_parser (2.11.3)
@@ -64,6 +65,7 @@ DEPENDENCIES
   minitest
   overcommit
   puma-metrics!
+  rack
   rake
   rubocop
 
