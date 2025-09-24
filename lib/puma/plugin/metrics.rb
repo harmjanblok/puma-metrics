@@ -22,9 +22,9 @@ Puma::Plugin.create do
       launcher.events.error "Invalid control URI: #{str}"
     end
 
-    launcher.events.on_stopped do
-      metrics.stop(true) unless metrics.shutting_down?
-    end
+    events = launcher.events
+    action = -> { metrics.stop(true) unless metrics.shutting_down? }
+    events.respond_to?(:after_stopped) ? events.after_stopped(&action) : events.on_stopped(&action)
 
     metrics.run
   end
