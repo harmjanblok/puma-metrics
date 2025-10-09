@@ -33,7 +33,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: ruby/setup-ruby@master
       with:
-        ruby-version: 3.4
+        ruby-version: 3.4.7
     - env:
         RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
       run: |
