@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 1.5.0
+
+Changes:
+
+- Added support for puma 6.6.0 busy_threads stat
+- Require puma 6.6.0 or newer
+
+Housekeeping:
+
+- Update dependencies
+
 ## 1.4.2
 
 Housekeeping:
