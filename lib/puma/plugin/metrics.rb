@@ -19,7 +19,7 @@ Puma::Plugin.create do
       launcher.log_writer.log "* Starting metrics server on #{str}"
       metrics.add_tcp_listener uri.host, uri.port
     else
-      launcher.events.error "Invalid control URI: #{str}"
+      launcher.log_writer.error "Invalid URI in :metrics_url: #{str}"
     end
 
     launcher.events.on_stopped do
