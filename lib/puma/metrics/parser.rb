@@ -29,13 +29,21 @@ module Puma
                 .set(0)
       end
 
-      def register_default_metrics # rubocop:disable Metrics/MethodLength
+      def register_default_metrics # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         registry.gauge(:puma_backlog,
                        docstring: 'Number of established but unaccepted connections in the backlog',
                        labels: [:index],
                        preset_labels: { index: 0 })
         registry.gauge(:puma_busy_threads,
                        docstring: 'How saturated the worker threads are with requests',
+                       labels: [:index],
+                       preset_labels: { index: 0 })
+        registry.gauge(:puma_backlog_max,
+                       docstring: 'Max requests fully buffered and waiting for a thread since the last stats read',
+                       labels: [:index],
+                       preset_labels: { index: 0 })
+        registry.gauge(:puma_reactor_max,
+                       docstring: 'Max connections in the reactor awaiting a full request since the last stats read',
                        labels: [:index],
                        preset_labels: { index: 0 })
         registry.gauge(:puma_running,

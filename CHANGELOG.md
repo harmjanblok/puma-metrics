@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Changes:
+
+- Added puma 7.0.0's backlog_max and reactor_max stats
+
 ## 1.5.0
 
 Changes:
