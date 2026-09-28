@@ -32,13 +32,15 @@ class TestClusterOne < Minitest::Test
     @l ||= ['{index="0"}']
   end
 
-  def metrics
+  def metrics # rubocop:disable Metrics/MethodLength
     [{ name: 'puma_backlog',        type: 'gauge', labels: l,  value: 0.0 },
+     { name: 'puma_backlog_max',    type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_booted_workers', type: 'gauge', labels: [], value: 1.0 },
      { name: 'puma_busy_threads',   type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_max_threads',    type: 'gauge', labels: l,  value: 16.0 },
      { name: 'puma_old_workers',    type: 'gauge', labels: [], value: 0.0 },
      { name: 'puma_pool_capacity',  type: 'gauge', labels: l,  value: 16.0 },
+     { name: 'puma_reactor_max',    type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_requests_count', type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_running',        type: 'gauge', labels: l,  value: 0.0 },
      { name: 'puma_workers',        type: 'gauge', labels: [], value: 1.0 }]
