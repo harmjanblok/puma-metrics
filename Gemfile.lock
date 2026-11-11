@@ -28,7 +28,7 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (1.6.0)
-    prometheus-client (4.2.5)
+    prometheus-client (5.0.0)
       base64
     puma (7.1.0)
       nio4r (~> 2.0)
